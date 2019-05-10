@@ -84,6 +84,6 @@ func main() {
 		Handler:  app.routes(),
 	}
 
-	err = srv.ListenAndServe()
+	err = srv.ListenAndServeTLS("./tls/cert.pem", "./tls/key.pem")
 	app.errorLog.Fatal(err)
 }
